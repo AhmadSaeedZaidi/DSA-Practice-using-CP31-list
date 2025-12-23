@@ -17,29 +17,33 @@ int main() {
     int n, c = 0, res = 0;
     cin >> n;
     string s;
-    bool b;
+    bool b, x;
     cin >> s;
+    x = false;
     REP(i, 0, n) {
       b = (s[i] == '.');
       if (b) {
         c++;
         switch (c) {
           case 1:
-            res++; break;
+            res++;
+            break;
           case 3: {
             c = 0;
-            res++; break;
+            x = true;
+            break;
           }
         }
       } else {
         if (c == 2) {
-          c = 0;
           res++;
         }
+        c = 0;
       }
-      cout << "value of c:" << c << "\n";
     }
     if (c == 2) res++;
-    cout << res << "\n";
+    cout << ((x) ? 2 : res) << "\n";
   }
 }
+
+// accepted
