@@ -19,3 +19,5 @@ int main() {
     cout << x*k + 1 << "\n";
   }
 }
+
+// accepted
