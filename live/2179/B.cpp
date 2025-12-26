@@ -34,3 +34,5 @@ int main() {
     cout << min_sum << "\n";
   }
 }
+
+// accepted
