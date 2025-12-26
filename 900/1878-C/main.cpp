@@ -15,7 +15,11 @@ int main() {
   int t;
   cin >> t;
   while (t--) {
-    int n;
-    cin >> n;
+    ll n,k,x;
+    cin >> n >> k >> x;
+    ll sum = n*(n+1)/2, min = k*(k+1)/2, max = sum-(n-k)*(n-k+1)/2;
+    cout << (x < min || x > max ? "NO\n" : "YES\n");
   }
 }
+
+// accepted

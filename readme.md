@@ -43,6 +43,7 @@ The focus is on:
   - One subfolder per problem
   - Folder name = problem name or ID
   - Each problem is self-contained (usually a single `main.cpp`)
+  - Alternative solutions will be contained in (`alt.cpp`)
 
 This makes it easy to:
 - revisit weak difficulty bands
