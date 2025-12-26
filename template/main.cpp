@@ -3,6 +3,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
+typedef unordered_map<int,int> mp;
 #define F first
 #define S second
 #define PB push_back
