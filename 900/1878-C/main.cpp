@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
-typedef unordered_map<int,int> mi;
+typedef unordered_map<int, int> mi;
 #define F first
 #define S second
 #define PB push_back
@@ -15,9 +15,9 @@ int main() {
   int t;
   cin >> t;
   while (t--) {
-    ll n,k,x;
+    ll n, k, x;
     cin >> n >> k >> x;
-    ll sum = n*(n+1)/2, min = k*(k+1)/2, max = sum-(n-k)*(n-k+1)/2;
+    ll sum = n * (n + 1) / 2, min = k * (k + 1) / 2, max = sum - (n - k) * (n - k + 1) / 2;
     cout << (x < min || x > max ? "NO\n" : "YES\n");
   }
 }

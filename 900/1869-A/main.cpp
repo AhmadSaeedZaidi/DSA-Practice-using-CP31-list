@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
-typedef unordered_map<int,int> mi;
+typedef unordered_map<int, int> mi;
 #define F first
 #define S second
 #define PB push_back
@@ -17,13 +17,11 @@ int main() {
   while (t--) {
     int n, x;
     cin >> n;
-    REP(i,0,n) {
-        cin >> x;
-    }
-    if (n%2==0) {
-        cout << "2\n1 " << n << "\n1 " << n << '\n';
+    REP(i, 0, n) { cin >> x; }
+    if (n % 2 == 0) {
+      cout << "2\n1 " << n << "\n1 " << n << '\n';
     } else {
-        cout << "4\n1 2\n1 2 \n2 " << n << "\n2 " << n <<'\n';
+      cout << "4\n1 2\n1 2 \n2 " << n << "\n2 " << n << '\n';
     }
   }
 }

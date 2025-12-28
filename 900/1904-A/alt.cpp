@@ -26,7 +26,7 @@ int main() {
       r.insert({v[2] + m.F, v[3] + m.S});
     }
     for (auto m : move) {
-      if (r.count({v[4]+m.F,v[5]+m.S})) ans++;
+      if (r.count({v[4] + m.F, v[5] + m.S})) ans++;
     }
     cout << ans << "\n";
   }

@@ -19,17 +19,17 @@ int main() {
     int a[n];
     REP(i, 0, n) {
       cin >> a[i];
-      if (i>0) sum += abs(a[i]-a[i-1]);
+      if (i > 0) sum += abs(a[i] - a[i - 1]);
     }
     REP(i, 0, n) {
       if (i == 0) {
-        curr = sum- abs(a[0] - a[1]);
+        curr = sum - abs(a[0] - a[1]);
       } else if (i == n - 1) {
-        curr = sum- abs(a[n-1] - a[n-2]);
+        curr = sum - abs(a[n - 1] - a[n - 2]);
       } else {
-        curr = sum- abs(a[i] - a[i + 1]) - abs(a[i] - a[i - 1]) + abs(a[i - 1] - a[i + 1]);
+        curr = sum - abs(a[i] - a[i + 1]) - abs(a[i] - a[i - 1]) + abs(a[i - 1] - a[i + 1]);
       }
-      min_sum = min(min_sum,curr);
+      min_sum = min(min_sum, curr);
     }
     cout << min_sum << "\n";
   }

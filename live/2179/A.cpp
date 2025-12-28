@@ -14,9 +14,9 @@ int main() {
   int t;
   cin >> t;
   while (t--) {
-    int k,x;
+    int k, x;
     cin >> k >> x;
-    cout << x*k + 1 << "\n";
+    cout << x * k + 1 << "\n";
   }
 }
 

@@ -18,18 +18,17 @@ int main() {
     string s;
     cin >> n >> k;
     cin >> s;
-    unordered_map<char,int> mp;
-    REP(i,0,n) {
-        mp[s[i]] = (mp.count(s[i]) ? mp[s[i]]+1 : 1);
-    }
-    bool odd = (n-k) % 2;
+    unordered_map<char, int> mp;
+    REP(i, 0, n) { mp[s[i]] = (mp.count(s[i]) ? mp[s[i]] + 1 : 1); }
+    bool odd = (n - k) % 2;
     int odds = 0, evens = 0;
     for (auto m : mp) {
-        if (m.S % 2 == 0) evens++; else odds++;
+      if (m.S % 2 == 0)
+        evens++;
+      else
+        odds++;
     }
-    bool c0 = odds - k == 1 && odd,
-    c1 = k == odds && !odd,
-    c2 = k > odds;
+    bool c0 = odds - k == 1 && odd, c1 = k == odds && !odd, c2 = k > odds;
     cout << (c0 || c1 || c2 ? "yes\n" : "no\n");
   }
 }
