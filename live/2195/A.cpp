@@ -26,3 +26,4 @@ int main() {
 }
 
 // accepted
+// simple greedy/linear search whatev, joke problem.

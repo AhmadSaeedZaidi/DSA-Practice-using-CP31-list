@@ -40,3 +40,4 @@ int main() {
 }
 
 // accepted after contest. for learning
+// math problem
