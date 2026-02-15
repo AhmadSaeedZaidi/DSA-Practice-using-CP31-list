@@ -12,12 +12,17 @@ typedef unordered_map<int, int> mi;
 #define SQ(a) (a) * (a)
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
   int t;
   cin >> t;
   while (t--) {
-    int n;
+    int n, num, f = 0;
     cin >> n;
+    REP(i,0,n) {
+        cin >> num;
+        if (num == 67) f = 1; 
+    }
+    cout << (f ? "YES" : "NO") << '\n';
   }
 }
+
+// accepted
