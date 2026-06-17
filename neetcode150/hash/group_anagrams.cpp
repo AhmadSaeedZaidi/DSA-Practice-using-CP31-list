@@ -16,31 +16,27 @@ typedef unordered_map<int, int> mi;
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        vector<mi> v;
+        unordered_map<string,vector<string>> v;
         vector<vector<string>> sol;
-        int i; bool found;
+        int i;
         for (auto s:strs) {
-            mi m;
+            vector<int> m(26, 0);
             for (auto c:s) {
-                m[c]++;
+                m[c-'a']++;
             }
-            i = 0; found = false;
-            for (auto map:v) {
-                if (map == m) {
-                    sol[i].push_back(s);
-                    found = true;
-                }
-                i++;
+            string key = "";
+            for (i = 0; i < 26; i++) {
+                key +='#'+char(m[i]);
+    
             }
-            if (!found) {
-                sol.push_back({s});
-                v.push_back(m);
-            }
+            v[key].push_back(s);
         }
-
+        for (auto m:v) {
+            sol.push_back(m.S);
+        }
         return sol;
 
     }
 };
 
-// solution works, but i can improve it.
+// seems to be the best possible solution
