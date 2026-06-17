@@ -1,5 +1,3 @@
-// two pointer, why was this a hard problem?
-
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -13,11 +11,19 @@ typedef unordered_map<int, int> mi;
 #define REP(i, a, b) for (int i = a; i < b; i++)
 #define SQ(a) (a) * (a)
 
-
 class Solution {
 public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        
+    int longestConsecutive(vector<int>& nums) {
+        mi m;
+        sort(nums.begin(), nums.end());
+        int k = 0;
+        for (auto n:nums) {
+            m[n] = (m[n-1]) ? m[n-1]+1:1;
+            k = max(m[n],k);
+        }
+        return k;
     }
 };
 
+
+// fun problem
