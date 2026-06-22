@@ -35,4 +35,26 @@ public:
 
 // ridiculously hard problem.
 // the winning idea is that 
-// a) the 
+/*
+ * SLIDING WINDOW: LONGEST REPEATING CHARACTER REPLACEMENT
+ * -------------------------------------------------------
+ * * a) The "Historical Max" Trick (O(1) instead of O(26))
+ * - Don't loop 26 times to find the max frequency in the current window.
+ * - Just track: max_freq = max(max_freq, count[s[right] - 'A'])
+ * - Why? We only care about finding a LONGER window. A longer window 
+ * can ONLY be formed if the historical maximum frequency is beaten.
+ * * b) The Translation Formula (Validity Check)
+ * - English: "Can I fix the wrong characters with my k budget?"
+ * - Math: (Window Length) - (Max Frequency) <= k
+ * * c) The "Rigid Window" Optimization (if vs while)
+ * - Because we only want the MAXIMUM length, the window never needs 
+ * to physically shrink back to a valid state.
+ * - Standard: Use `while` to move `left` until the window is valid again.
+ * - Optimized: Use `if`. When invalid, move `left++` (and `right++` via 
+ * the loop). The window becomes a rigid box that slides across the 
+ * array at its current max size until it can legally expand again.
+ * * d) Fixed Array > Hash Map
+ * - For "Uppercase English Letters", ALWAYS use: int count[26] = {0};
+ * - Access via pointer math: count[s[i] - 'A']
+ * - Avoids unordered_map hashing overhead and is highly CPU cache-friendly.
+ */
