@@ -62,5 +62,8 @@ public:
     }
 };
 
-// can be done with hashmap
-// MUCH faster due to caching, but more memory needed.
+// easy peasy, just edit the original list LOL
+// and do 3 passes 
+// one to make new nodes
+// one to connect new nodes 
+// one to detatch lists
