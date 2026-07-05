@@ -3,12 +3,9 @@ using namespace std;
 
 class Solution {
 public:
-    void printNTo1Recur(int n, int i) {
-        if (i==0) return;
-        cout << i << " ";
-        printNTo1Recur(n,i-1);
-    }
-    int printNTo1(int n) {
-        printNTo1Recur(n,n);
+    void printNTo1(int n) {
+        if (n==0) return;
+        cout << n << " ";
+        printNTo1(n-1);
     }
 };
