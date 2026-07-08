@@ -20,25 +20,15 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
-        int sol = 0, n;
-        if (!root) return 0;
-        deque<TreeNode*> q;
-        TreeNode *node;
-        q.push_front(root);
-        while (!q.empty()) {
-            n = q.size();
-            for (int i = 0; i < n; i++) {
-                node = q.back();
-                q.pop_back();
-                if (node->left) q.push_front(node->left);
-                if (node->right) q.push_front(node->right);
-            }
-            sol++;
-        }
-        return sol;
+    TreeNode* invertTree(TreeNode* root) {
+        if (!root) return root;
+        swap(root->left,root->right);
+        invertTree(root->left);
+        invertTree(root->right);
+        return root;
     }
 };
+
+// incredibly simple, DFS through tree, invert as you go.
