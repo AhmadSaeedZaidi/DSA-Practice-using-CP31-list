@@ -14,15 +14,32 @@ typedef unordered_map<int, int> mi;
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int l1 = 0, l2 = 0, r1 = nums1.size() -1, r2 = nums2.size() -1, mid1, mid2;
-        
-        if (nums1[l1] > nums2[r2]) return
+        if (nums1.size() > nums2.size()) return findMedianSortedArrays(nums2,nums1);
+        int n = nums1.size(), m = nums2.size();
+        int ll = 0, rr = n;
+        int half = (n + m +1)/2;
+        int l1, r1, l2, r2, m1, m2;
+        while (ll <= rr) {
+            m1 = ll + (rr - ll) /2;
+            m2 = half-m1;
+            l1 = (m1 == 0) ? numeric_limits<int>::min() : nums1[m1-1];
+            l2 = (m2 == 0) ? numeric_limits<int>::min() : nums2[m2-1];
+            r1 = (m1 == n) ? numeric_limits<int>::max() : nums1[m1];
+            r2 = (m2 == m) ? numeric_limits<int>::max() : nums2[m2];
+            if (l1 <= r2 && l2 <= r1) {
+                if ((n + m) % 2 == 0) {
+                    return (max(l1, l2) + min(r1, r2)) / 2.0;
+                } else {
+                    return max(l1, l2);
+                }
+            }
+            if (r2 < l1) rr = m1-1; else ll = m1+1;
+        }
+        return -1;
     }
 };
 
-// 1, 2, 3, 4, 5, 6, 7, 8;
-// case 1:
-//             5, 6, 7
-// case 2:
-//                        ,9, 10, 11
-// case 3:        
+// new concept!
+// binary search on partition.
+// i... i don't know how to explain this honestly.
+
