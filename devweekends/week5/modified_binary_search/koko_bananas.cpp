@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
@@ -36,3 +39,8 @@ public:
 
     }
 };
+// key take away: 
+// sometimes, you will binary search for right value, and perhaps your "check" or "control flow" is a bit special
+// it doesn't need to be a O(1) if statement. could be a O(n) search!
+// i've seen problems like this on codeforces before, but didn't know how to solve them
+// now i do :)
